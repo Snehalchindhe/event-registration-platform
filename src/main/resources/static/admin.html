@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventora | Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <header class="admin-header">
+        <a href="index.html" class="brand">
+            <span class="brand-icon">E</span>
+            <span>eventora<span class="brand-dot">.</span></span>
+        </a>
+
+        <nav>
+            <a href="index.html">View Website ↗</a>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+
+        <section class="welcome-section">
+            <div>
+                <span class="eyebrow">EVENTORA MANAGEMENT</span>
+                <h1>Admin Dashboard</h1>
+                <p>Manage event registrations and keep track of your attendees.</p>
+            </div>
+            <div class="admin-avatar">A</div>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon purple">♧</div>
+                <p>Total Registrations</p>
+                <h2 id="totalRegistrations">0</h2>
+                <span>All event participants</span>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">✓</div>
+                <p>Confirmed</p>
+                <h2 id="confirmedRegistrations">0</h2>
+                <span>Successful registrations</span>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">▤</div>
+                <p>Events</p>
+                <h2 id="totalEvents">0</h2>
+                <span>Available events</span>
+            </div>
+        </section>
+
+        <section class="attendees-section">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">PARTICIPANT MANAGEMENT</span>
+                    <h2>Registered Attendees</h2>
+                    <p>View and search all event participants.</p>
+                </div>
+                <button class="refresh-btn" id="refreshBtn">↻ Refresh</button>
+            </div>
+
+            <div class="table-toolbar">
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search by name, email, college or event..."
+                    >
+                </div>
+                <span class="result-count" id="resultCount">0 participants</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>PARTICIPANT</th>
+                            <th>COLLEGE / ORGANIZATION</th>
+                            <th>EVENT</th>
+                            <th>INTERESTS</th>
+                            <th>REGISTERED ON</th>
+                            <th>STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendeeTable">
+                        <tr>
+                            <td colspan="6" class="table-message">
+                                Loading registrations...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="dashboard-message" id="dashboardMessage" aria-live="polite"></p>
+        </section>
+
+        <footer class="dashboard-footer">
+            <span>© 2026 Eventora. All rights reserved.</span>
+            <span>Event Management Dashboard</span>
+        </footer>
+
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventora | Discover Experiences</title>
+    <meta name="description" content="Discover and register for exciting events with Eventora.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">E</span>
+            <span>eventora<span class="logo-dot">.</span></span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#events">Explore Events</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="admin.html" class="admin-link">Admin Dashboard ↗</a>
+            <a href="#events" class="nav-button">Explore Events</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="eyebrow">✦ YOUR NEXT EXPERIENCE STARTS HERE</span>
+                <h1>Discover events.<br> <span>Make memories.</span></h1>
+                <p>
+                    Find inspiring experiences, connect with people,
+                    and be part of something extraordinary.
+                </p>
+                <div class="hero-actions">
+                    <a href="#events" class="primary-button">Explore Events <span>→</span></a>
+                    <span class="hero-note">Discover. Connect. Experience.</span>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <strong id="totalEvents">03</strong>
+                        <span>Featured events</span>
+                    </div>
+                    <div>
+                        <strong>100%</strong>
+                        <span>Exciting experiences</span>
+                    </div>
+                    <div>
+                        <strong>∞</strong>
+                        <span>Possibilities</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="visual-glow"></div>
+                <div class="floating-card card-top">
+                    <span class="floating-icon">✦</span>
+                    <div>
+                        <strong>Discover more</strong>
+                        <small>Experiences that inspire</small>
+                    </div>
+                </div>
+                <div class="hero-art">
+                    <div class="art-circle circle-one"></div>
+                    <div class="art-circle circle-two"></div>
+                    <div class="art-center">
+                        <span>✳</span>
+                        <p>BE PART OF<br>SOMETHING GREAT</p>
+                    </div>
+                    <span class="art-star star-one">✦</span>
+                    <span class="art-star star-two">✧</span>
+                    <span class="art-star star-three">✳</span>
+                </div>
+                <div class="floating-card card-bottom">
+                    <span class="online-dot"></span>
+                    <div>
+                        <strong>Your next event awaits</strong>
+                        <small>Find your people here</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="events-section" id="events">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">CURATED FOR YOU</span>
+                    <h2>Explore upcoming events<span>.</span></h2>
+                    <p>Find your interest. Choose your experience.</p>
+                </div>
+                <span class="event-count" id="eventCount">Loading events...</span>
+            </div>
+
+            <div class="filter-row">
+                <button class="filter-chip selected" data-category="All">All Events</button>
+                <button class="filter-chip" data-category="Technology">Technology</button>
+                <button class="filter-chip" data-category="Development">Development</button>
+                <button class="filter-chip" data-category="Cyber Security">Cyber Security</button>
+            </div>
+
+            <div class="event-grid" id="eventGrid">
+                <div class="loading-message">Discovering amazing events...</div>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="about-content">
+                <span class="eyebrow">THE EVENTORA EXPERIENCE</span>
+                <h2>More than an event.<br><span>It's an experience.</span></h2>
+                <p>
+                    Eventora brings exciting opportunities together in one place.
+                    Explore events, discover new interests and register for
+                    experiences that help you grow.
+                </p>
+                <a href="#events" class="primary-button">Find Your Next Event →</a>
+            </div>
+            <div class="about-decoration">
+                <div class="about-symbol">E<span>✦</span></div>
+                <p>DISCOVER YOUR NEXT CHAPTER</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">E</span>
+            <span>eventora<span class="logo-dot">.</span></span>
+        </a>
+        <p>Discover. Connect. Experience.</p>
+        <span>© 2026 Eventora. All rights reserved.</span>
+    </footer>
+
+    <div class="modal" id="registrationModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+            <span class="eyebrow">SAVE YOUR SPOT</span>
+            <h2>Join the experience<span>.</span></h2>
+            <p class="modal-event-name" id="modalEventName"></p>
+
+            <form id="registrationForm">
+                <input type="hidden" id="eventId">
+
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="you@example.com" required>
+
+                <label for="college">College / Organization</label>
+                <input type="text" id="college" placeholder="Enter your college or organization" required>
+
+                <label for="domainInterests">Domain Interests</label>
+                <select id="domainInterests" required>
+                    <option value="">Select your interest</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Cyber Security">Cyber Security</option>
+                    <option value="Cloud Computing">Cloud Computing</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <button type="submit" class="primary-button submit-button">
+                    Complete Registration →
+                </button>
+                <p id="formMessage" class="form-message" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
